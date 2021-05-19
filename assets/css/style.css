@@ -1,3 +1,15 @@
+/* Common rules */
+body {
+    background-color: blanchedalmond;
+    background-image: url("../assets/img/lake.jpg");
+}
+
+.container {
+    width: 500px;
+    
+    background-position: center;
+}
+
 .color_green {
     color: greenyellow;
 }

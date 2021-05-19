@@ -33,9 +33,8 @@ const app = new Vue ({
         //cambiano tutti invece che solo uno
         completeTask(index) {
             var taskCompleted = this.tasks.splice(index, 1);
-            this.doneList.push(taskCompleted);
-            
-        } 
+            this.doneList.push(taskCompleted[0]);
+        }
 
     },
 
