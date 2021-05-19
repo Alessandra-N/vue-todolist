@@ -9,6 +9,7 @@ const app = new Vue ({
             "guardare i fiori",
         ],
         doneList: [],
+        erasedList: [],
         
     },
 
@@ -26,15 +27,21 @@ const app = new Vue ({
         },
 
         removeTask(index) {
-            this.tasks.splice(index, 1);
-
+            var taskErased = this.tasks.splice(index, 1);
+            this.erasedList.push(taskErased[0]);
+            console.log(this.erasedList);
         },
 
         //cambiano tutti invece che solo uno
         completeTask(index) {
             var taskCompleted = this.tasks.splice(index, 1);
             this.doneList.push(taskCompleted[0]);
-        }
+        },
+
+        returnTask(index) {
+            var notCompleted = this.doneList.splice(index, 1);
+            this.tasks.push(notCompleted);
+        },
 
     },
 

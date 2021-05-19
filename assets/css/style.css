@@ -1,15 +1,28 @@
 /* Common rules */
 body {
     background-color: blanchedalmond;
-    background-image: url("../assets/img/lake.jpg");
+    height: 100vh;
 }
 
-.container {
-    width: 500px;
-    
-    background-position: center;
+h3 {
+    color: indianred;
 }
 
+/* main */
+.add_task > input {
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+.add_task > button {
+    border-radius: 10px;
+    background-color: burlywood;
+    margin: 1rem 0;
+}
+.col {
+    width: 300px;
+}
+
+/* Utilities */
 .color_green {
-    color: greenyellow;
+    color: green;
 }
