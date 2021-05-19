@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/aa8b984e32.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+        <div id="app">
+
+            <input type="text" placeholder="Add a task" v-model="newTask">
+            <h6>Add a simple task to do</h6>
+            <button @click="addTask" @keyup="addTask()">Add task</button>
+
+            <div class="task_list">
+
+                <div class="tasks" v-if="tasks.length > 0">
+                    <div contenteditable='true' v-for="(task, index) in tasks">
+                        {{ task }} 
+                        <i class="far fa-window-close" @click="removeTask(index)"></i>
+                        <i class="far fa-check-circle" @click="changeColor(index)" :class="colorClass"></i>
+                    </div>
+
+                </div>
+
+                <div class="no_tasks" v-else>
+                    <h1>Nulla da fare</h1>
+                </div>    
+
+            </div>
+
+        </div>
+
+        <!-- Vue JS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <!-- JS -->
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
