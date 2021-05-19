@@ -7,8 +7,11 @@ const app = new Vue ({
         tasks: [
             "controllare la to-do list", 
             "capovolgere il criceto", 
-            "guardare i fiori"
+            "guardare i fiori",
         ],
+
+        //complete: [],
+        
     },
 
     methods: {
@@ -26,13 +29,16 @@ const app = new Vue ({
 
         removeTask(index) {
             this.tasks.splice(index, 1);
-            
+
         },
 
-        //cambiano tutti inece che solo uno
-        changeColor(index) {
+        //cambiano tutti invece che solo uno
+        completeTask() {
+            //this.complete = this.tasks.splice(index, 1);
+
             this.colorClass = "color_green"
-        }
+           
+        } 
 
     },
 
