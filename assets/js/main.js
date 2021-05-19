@@ -3,14 +3,12 @@ const app = new Vue ({
 
     data: {
         newTask: "",
-        colorClass: "",
         tasks: [
             "controllare la to-do list", 
             "capovolgere il criceto", 
             "guardare i fiori",
         ],
-
-        //complete: [],
+        doneList: [],
         
     },
 
@@ -33,11 +31,10 @@ const app = new Vue ({
         },
 
         //cambiano tutti invece che solo uno
-        completeTask() {
-            //this.complete = this.tasks.splice(index, 1);
-
-            this.colorClass = "color_green"
-           
+        completeTask(index) {
+            var taskCompleted = this.tasks.splice(index, 1);
+            this.doneList.push(taskCompleted);
+            
         } 
 
     },

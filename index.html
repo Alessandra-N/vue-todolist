@@ -24,10 +24,11 @@
             <div class="task_list">
 
                 <div class="tasks" v-if="tasks.length > 0">
+
                     <div contenteditable='true' v-for="(task, index) in tasks">
                         {{ task }} 
                         <i class="far fa-window-close" @click="removeTask(index)"></i>
-                        <i class="far fa-check-circle" @click="completeTask(index)" :class="colorClass"></i>
+                        <i class="far fa-check-circle" @click="completeTask(index)"></i>
                     </div>
 
                 </div>
@@ -35,6 +36,17 @@
                 <div class="no_tasks" v-else>
                     <h1>Nulla da fare</h1>
                 </div>
+
+                <div class="completed_tasks">
+
+                    <div v-for="(taskCompleted, index) in doneList">
+                        {{ taskCompleted }}
+                        <i class="far fa-check-circle color_green" @click="completeTask(index)"></i>
+                    </div>
+
+                </div>
+
+                
 
                 <!-- <div class="completed_tasks" v-if="complete.length > 0">
                     <div v-for="completed_task in complete">
