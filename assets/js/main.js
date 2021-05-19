@@ -7,6 +7,7 @@ const app = new Vue ({
             "controllare la to-do list", 
             "capovolgere il criceto", 
             "guardare i fiori",
+            "spazzolare il coccodrillo"
         ],
         doneList: [],
         erasedList: [],
@@ -42,6 +43,19 @@ const app = new Vue ({
             var notCompleted = this.doneList.splice(index, 1);
             this.tasks.push(notCompleted);
         },
+
+        deleteTask() {
+            let confirm = prompt("Vuoi davvero svuotare il cestino? Se sì, premi 'Y'!");
+            if (confirm.toLowerCase() === "y") {
+                this.erasedList = []
+            }
+            
+        },
+
+        returnDeleteTask(index) {
+            var notDeleted = this.erasedList.splice(index, 1);
+            this.tasks.push(notDeleted);
+        }
 
     },
 

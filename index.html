@@ -68,6 +68,8 @@
                             <h3>Erased tasks</h3>
                             <div v-for="(taskErased, index) in erasedList">
                                 {{taskErased}}
+                                <i class="far fa-trash-alt" @click="deleteTask()"></i>
+                                <i class="fas fa-undo-alt" @click="returnDeleteTask()"></i>
                             </div>
 
                         </div>
